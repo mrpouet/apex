@@ -1,0 +1,61 @@
+ISV1
+[APEX-MODEL:BUFFER
+   :ACADEMIC-YEARS ([APEX-MODEL:ACADEMIC-YEAR :NAME "2007-2008" ])
+   :ORGANIZATIONS ([APEX-MODEL:ORGANIZATION :NAME "A22 Building" ])
+   :TEACHING-TYPES ([APEX-MODEL:TEACHING-TYPE
+                       :NAME "Projet de Programmation 3" ])
+   :PEOPLE ([APEX-MODEL:STUDENT
+               :REMARK ""
+               :NAME "PERIER_Romain"
+               :DATE-OF-BIRTH 0
+               :GENDER :MALE
+               :ID 601051
+               :NOTES NIL ]
+            [APEX-MODEL:STUDENT
+               :REMARK ""
+               :NAME "QUINTAR_Fabien"
+               :DATE-OF-BIRTH 0
+               :GENDER :MALE
+               :ID 601052
+               :NOTES NIL ])
+   :TEACHING-PROGRAMS ([APEX-MODEL:TEACHING-PROGRAM
+                          :NAME "LST_Informatique"
+                          :ORGANIZED-BY [APEX-MODEL:ORGANIZATION
+                                           :NAME "Département Licence" ]
+                          :PART-OF NIL ])
+   :COURSES ([APEX-MODEL:COURSE
+                :PERSON-IN-CHARGE [APEX-MODEL:PERSON
+                                     :REMARK ""
+                                     :NAME "DURAND_Irène"
+                                     :DATE-OF-BIRTH 0
+                                     :GENDER :FEMALE ]
+                :REMARK ""
+                :NAME "PP3"
+                :CODE "INF356"
+                :SUPPLIER [APEX-MODEL:ORGANIZATION :NAME "Informatique" ]
+                :CREDITS 3
+                :DESCRIPTION ""
+                :INSTANCES ([APEX-MODEL:COURSE-INSTANCE
+                               :PERSON-IN-CHARGE [APEX-MODEL:PERSON
+                                                    :REMARK ""
+                                                    :NAME "DURAND_Irène"
+                                                    :DATE-OF-BIRTH 0
+                                                    :GENDER :FEMALE ]
+                               :REMARK ""
+                               :COURSE NIL
+                               :ACADEMIC-YEAR [APEX-MODEL:ACADEMIC-YEAR
+                                                 :NAME "2008-2009" ]
+                               :PARITY-SEMESTER 2
+                               :PARTS NIL ]) ])
+   :BATCHES ([APEX-MODEL:BATCH
+                :TEACHING-PROGRAM [APEX-MODEL:TEACHING-PROGRAM
+                                     :NAME "LST_Informatique"
+                                     :ORGANIZED-BY [APEX-MODEL:ORGANIZATION
+                                                      :NAME "Département Licence" ]
+                                     :PART-OF NIL ]
+                :RELATIVE-SEMESTER 5
+                :ACADEMIC-YEAR [APEX-MODEL:ACADEMIC-YEAR :NAME "2008-2009" ]
+                :PARITY-SEMESTER 2
+                :SIZE 2
+                :REVENUE-PER-STUDENT 13 ])
+   :FOLLOWS NIL ]
