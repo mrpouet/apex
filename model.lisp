@@ -134,9 +134,6 @@
   ((%date-of-birth :initform 0 :initarg :date-of-birth :reader date-of-birth)
    (%gender :initarg :gender :accessor gender)))
 
-(defmethod state ((p person))
-  "personnel")
-
 (define-save-info person
   (:date-of-birth date-of-birth)
   (:gender gender))
@@ -148,21 +145,6 @@
 
 (define-save-info person-in-charge-mixin
   (:person-in-charge person-in-charge))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;
-;;; Student
-
-(defclass student (person)
-  ((%id :initform 0 :initarg :id :reader id)
-   (%notes :initform '() :initarg :notes :accessor notes)))
-
-(defmethod state ((s student))
-  "étudiant")
-
-(define-save-info student
-    (:id id)
-    (:notes notes))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;

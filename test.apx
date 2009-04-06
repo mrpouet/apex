@@ -44,7 +44,7 @@ ISV1
                                :REMARK ""
                                :COURSE NIL
                                :ACADEMIC-YEAR [APEX-MODEL:ACADEMIC-YEAR
-                                                 :NAME "2008-2009" ]
+                                                 :NAME "2007-2008" ]
                                :PARITY-SEMESTER 2
                                :PARTS NIL ]) ])
    :BATCHES ([APEX-MODEL:BATCH
@@ -54,7 +54,7 @@ ISV1
                                                       :NAME "Département Licence" ]
                                      :PART-OF NIL ]
                 :RELATIVE-SEMESTER 5
-                :ACADEMIC-YEAR [APEX-MODEL:ACADEMIC-YEAR :NAME "2008-2009" ]
+                :ACADEMIC-YEAR [APEX-MODEL:ACADEMIC-YEAR :NAME "2007-2008" ]
                 :PARITY-SEMESTER 2
                 :SIZE 2
                 :REVENUE-PER-STUDENT 13 ])

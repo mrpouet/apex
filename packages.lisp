@@ -28,12 +28,10 @@
 	   #:name
 	   #:remark
 	   #:instances
-	   #:id
-	   #:state
 	   #:print-object
 	   #:*print-for-file-io*
 	   #:*readtables*
-	   #:person #:teacher #:secretary #:student
+	   #:person #:teacher #:secretary #:student #:id
 	   #:amount #:assignment
 	   #:apex-condition))
 

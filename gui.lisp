@@ -148,6 +148,7 @@
 
 (define-presentation-method accept
     ((type person) stream (view textual-view) &key)
+  (format t "jai été appelé")
   (multiple-value-bind (person success string)
       (handler-case (complete-input stream
                                     (lambda (so-far mode)
@@ -504,17 +505,6 @@
       (format pane "~a~%~%" (pretty-name person))
       (loop for year in (sort (copy-seq (years frame)) #'string< :key #'name)
 	    do (format pane "Année universitaire : ~a~%" (name year))
-	    do (format pane "Statut: ")
-	   ;; Avoir définit et appelé une méthode "state" est plus correct d'un point de vue objet,
-	   ;; en effet celà évite de manière explicite de se poser la question : quel est le type réel de l'objet ?
-	   ;; Chose qui doit être évitée le plus que possible dans la mesure où nous disposons d'un mécanisme
-	   ;; bien plus éfficace , la redéfinition de méthode (en plus on dispose d'un code plus homogène)
-	    do (format pane (state person))
-	    do (if (teacherp view)
-		   (format pane "/enseignant~%")
-		   (format pane "~%"))
-	    do (if (eq 'apex-model:student (type-of person))
-		   (format pane "N° Etudiant: ~2D~%" (id person)))
 	    do (format pane "~%")
 	    do (format pane "   Enseignements~%~%")
 	    do (format pane "   ")
