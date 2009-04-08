@@ -10,7 +10,7 @@
   (:export #:read-everything #:read-buffer-from-stream
 	   #:apex-object
 	   #:buffer #:buffer-extended #:courses #:people #:organizations 
-	   #:teaching-programs #:registration #:registered-years
+	   #:teaching-programs #:registration #:registrations #:registered-years
 	   #:teaching-types
 	   #:academic-years #:batches #:course-instances
 	   #:organization

@@ -26,3 +26,17 @@
     (format stream "~A~%" (car (car apex-model:*readtables*)))
     (apex-model:print-object (current-buffer) stream)
     (setf apex-model:*print-for-file-io* nil)))
+
+(define-command (com-add-student :name "Ajouter Etudiant" :command-table global-apex-table)
+    ((name   'string  :prompt "Nom")
+     (gender 'gender  :prompt "Sexe")
+     (id     'integer :prompt "N° Etudiant"))
+  (let ((person (make-instance 'apex-model:person 
+		       :name   name
+		       :gender gender
+		       :date-of-birth 0)))
+  (push person (people (current-buffer)))
+  (push (make-instance 'apex-model:registration 
+		       :person person
+		       :id id) (registrations (current-buffer)))))
+
