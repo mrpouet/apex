@@ -18,3 +18,11 @@
     (new-view (make-instance 'person-view
 			     :buffer (current-buffer)
 			     :person (person registration)))))
+
+(define-command (com-genbase :name "Sauvegarder Base" :command-table global-apex-table)
+    ((filename 'string :prompt "Nom fichier"))
+  (with-open-file (stream filename :direction :output :if-does-not-exist :create)
+    (setf apex-model:*print-for-file-io* t)
+    (format stream "~A~%" (car (car apex-model:*readtables*)))
+    (apex-model:print-object (current-buffer) stream)
+    (setf apex-model:*print-for-file-io* nil)))

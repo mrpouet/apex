@@ -2,7 +2,7 @@
   (:use :clim-lisp :clim-mop)
   (:export #:ninsert-element #:define-added-mixin
 	   #:unicode-to-char #:char-to-unicode
-	   #:genbase))
+	   ))
 
 (defpackage :apex-model
     (:use :clim-lisp :apex-utilities :esa :esa-buffer :esa-io)
