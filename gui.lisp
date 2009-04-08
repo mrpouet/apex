@@ -148,7 +148,6 @@
 
 (define-presentation-method accept
     ((type person) stream (view textual-view) &key)
-  (format t "jai été appelé")
   (multiple-value-bind (person success string)
       (handler-case (complete-input stream
                                     (lambda (so-far mode)

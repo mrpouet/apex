@@ -1,18 +1,26 @@
-(in-package :apex-model)
+(in-package :apex-model) 
 
-;; classe student
-;; un étudiant est une personne ayant un numéros étudiant
-;; pouvant être enseignant ou pas (au même titre qu'une person)
-;; avec un status d'étudiant durant une période à durée déterminée
-;; (génèralement)
-;; 
+(defclass buffer-extended (buffer)
+  ((%registrations :initform '() :initarg :registrations 
+		   :accessor registrations)))
 
-(defclass student (person)
-  ((%id :initarg :id :reader id)
-   (%registered-years :initarg :registered-years :initform '() :accessor registered-years)
-   (%notes :initarg :notes :initform '() :accessor notes)))
+(defmethod studentp ((p person) (buffer buffer-extended))
+  (let ((registrations (registrations buffer)))
+    (find (name p) registrations :key (lambda (r) (name (person r))) 
+	  :test #'string=)))
+    
+    
 
-(define-save-info student
-   (:id id)
-   (:registered-years registered-years)
-   (:notes notes))
+(define-save-info buffer-extended
+    (:registrations registrations))
+
+(defclass registration (apex-object)
+  ((%person :initarg :person :accessor person)
+   (%id     :initarg :id     :reader   id)
+   (%registered-years :initform '() :initarg :registered-years 
+		      :accessor registered-years)))
+
+(define-save-info registration
+  (:person person)
+  (:id id)
+  (:registered-years registered-years))

@@ -9,7 +9,8 @@
   (:shadow #:second #:number)
   (:export #:read-everything #:read-buffer-from-stream
 	   #:apex-object
-	   #:buffer #:courses #:people #:organizations #:teaching-programs
+	   #:buffer #:buffer-extended #:courses #:people #:organizations 
+	   #:teaching-programs #:registration #:registered-years
 	   #:teaching-types
 	   #:academic-years #:batches #:course-instances
 	   #:organization
@@ -21,7 +22,8 @@
 	   #:course-instance 
 	   #:negociated-price #:parts #:part-instances
 	   #:course-part #:part-instance #:fraction #:assignments
-	   #:batch #:size #:relative-semester #:parity-semester #:revenue-per-student
+	   #:batch #:size #:relative-semester #:parity-semester 
+	   #:revenue-per-student #:studentp
 	   #:revenue #:batch-in-program-p
 	   #:follow #:price #:cost
 	   #:address #:postal-code #:city
@@ -31,7 +33,7 @@
 	   #:print-object
 	   #:*print-for-file-io*
 	   #:*readtables*
-	   #:person #:teacher #:secretary #:student #:id
+	   #:person #:teacher #:secretary #:id
 	   #:amount #:assignment
 	   #:apex-condition))
 
