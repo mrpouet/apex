@@ -8,13 +8,18 @@
 	  (format pane "Année(s) scolarisée(s): ")
 	  (dolist (e (registered-years registration))
 		  (format pane (name e)))
-	  (format pane "~%")))))
+	  (format pane "~%")
+	  (let ((notes (notes registration)))
+	    (if notes
+		(progn
+		  (format pane "Notes: ")
+		  (dolist (e notes)
+		    (format pane "~2D " e))
+		  (format pane "~%"))))))))
 
 (define-command (com-student-view :name "Voir Etudiant" :command-table global-apex-table)
     ((student-id 'integer :prompt "N° Etudiant"))
-  (let ((registration (find student-id (registrations (current-buffer)) 
-			    :key (lambda(r) (id r)))))    
-    (assert (not (eq registration nil)))
+  (let ((registration (get-registration-with-id student-id (current-buffer))))
     (new-view (make-instance 'person-view
 			     :buffer (current-buffer)
 			     :person (person registration)))))
@@ -40,3 +45,12 @@
 		       :person person
 		       :id id) (registrations (current-buffer)))))
 
+(define-command (com-add-student-note :name "Ajouter Note" :command-table global-apex-table)
+    ((id   'integer :prompt "N° Etudiant")
+     (ue   'string  :prompt "Code UE")
+     (note 'integer :prompt "Note"))
+  (let* ((registration (get-registration-with-id id (current-buffer))))
+    (if (not (notes registration))
+	(setf (notes registration) (make-hastable :test #'string=)))
+    (push note (gethash ue (notes registration))))) 
+    

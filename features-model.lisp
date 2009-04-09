@@ -8,6 +8,13 @@
   (let ((registrations (registrations buffer)))
     (find (name p) registrations :key (lambda (r) (name (person r))) 
 	  :test #'string=)))
+
+(defmethod get-registration-with-id (student-id (buffer buffer-extended))
+  (let ((registration (find student-id (registrations buffer)
+			    :key (lambda(r) (id r)))))
+    (assert (not (eq registration nil)))
+    registration))
+
     
     
 
@@ -18,7 +25,8 @@
   ((%person :initarg :person :accessor person)
    (%id     :initarg :id     :reader   id)
    (%registered-years :initform '() :initarg :registered-years 
-		      :accessor registered-years)))
+		      :accessor registered-years)
+   (%notes  :initform nil :initarg :notes :accessor  notes)))
 
 (define-save-info registration
   (:person person)
