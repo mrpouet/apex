@@ -12,10 +12,12 @@
 	  (let ((notes (notes registration)))
 	    (if notes
 		(progn
-		  (format pane "Notes: ")
-		  (dolist (e notes)
-		    (format pane "~2D " e))
-		  (format pane "~%"))))))))
+		  (format pane "Notes:~%")
+		  (loop for k being the hash-key of notes
+		       do(format pane "~A: " k)
+		       do(dolist (e (gethash k notes))
+			   (format pane "~2D " e))
+		       do(format pane "~%")))))))))
 
 (define-command (com-student-view :name "Voir Etudiant" :command-table global-apex-table)
     ((student-id 'integer :prompt "N° Etudiant"))
@@ -23,14 +25,6 @@
     (new-view (make-instance 'person-view
 			     :buffer (current-buffer)
 			     :person (person registration)))))
-
-(define-command (com-genbase :name "Sauvegarder Base" :command-table global-apex-table)
-    ((filename 'string :prompt "Nom fichier"))
-  (with-open-file (stream filename :direction :output :if-does-not-exist :create)
-    (setf apex-model:*print-for-file-io* t)
-    (format stream "~A~%" (car (car apex-model:*readtables*)))
-    (apex-model:print-object (current-buffer) stream)
-    (setf apex-model:*print-for-file-io* nil)))
 
 (define-command (com-add-student :name "Ajouter Etudiant" :command-table global-apex-table)
     ((name   'string  :prompt "Nom")
@@ -51,6 +45,6 @@
      (note 'integer :prompt "Note"))
   (let* ((registration (get-registration-with-id id (current-buffer))))
     (if (not (notes registration))
-	(setf (notes registration) (make-hastable :test #'string=)))
+	(setf (notes registration) (make-hash-table :test #'equal)))
     (push note (gethash ue (notes registration))))) 
     
