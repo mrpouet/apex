@@ -1,33 +1,30 @@
 ISV1
+
 [APEX-MODEL:BUFFER-EXTENDED
    :ACADEMIC-YEARS (#1=[APEX-MODEL:ACADEMIC-YEAR :NAME "2007-2008" ])
    :ORGANIZATIONS ([APEX-MODEL:ORGANIZATION :NAME "A22 Building" ])
    :TEACHING-TYPES ([APEX-MODEL:TEACHING-TYPE
                        :NAME "Projet de Programmation 3" ])
    :PEOPLE (#2=[APEX-MODEL:PERSON
-               :REMARK ""
-               :NAME "PERIER_Romain"
-               :DATE-OF-BIRTH 0
-               :GENDER :MALE ]
+                  :REMARK ""
+                  :NAME "PERIER_Romain"
+                  :DATE-OF-BIRTH 0
+                  :GENDER :MALE ]
             #3=[APEX-MODEL:PERSON
-               :REMARK ""
-               :NAME "QUINTAR_Fabien"
-               :DATE-OF-BIRTH 0
-               :GENDER :MALE ])
-   :REGISTRATIONS ([APEX-MODEL:REGISTRATION
-   		   :PERSON #2#
-		   :ID 601051
-		   :REGISTERED-YEARS (#1#) ]
-		   [APEX-MODEL:REGISTRATION
-		   :PERSON #3#
-		   :ID 601052
-		   :REGISTERED-YEARS (#3#) ])
-		  
+                  :REMARK ""
+                  :NAME "PERIER_Romain"
+                  :DATE-OF-BIRTH 0
+                  :GENDER :MALE ]
+            #4=[APEX-MODEL:PERSON
+                  :REMARK ""
+                  :NAME "QUINTAR_Fabien"
+                  :DATE-OF-BIRTH 0
+                  :GENDER :MALE ])
    :TEACHING-PROGRAMS ([APEX-MODEL:TEACHING-PROGRAM
                           :NAME "LST_Informatique"
                           :ORGANIZED-BY [APEX-MODEL:ORGANIZATION
                                            :NAME "Département Licence" ]
-                          :PART-OF NIL ])
+                          :PART-OF COMMON-LISP:NIL ])
    :COURSES ([APEX-MODEL:COURSE
                 :PERSON-IN-CHARGE [APEX-MODEL:PERSON
                                      :REMARK ""
@@ -47,20 +44,32 @@ ISV1
                                                     :DATE-OF-BIRTH 0
                                                     :GENDER :FEMALE ]
                                :REMARK ""
-                               :COURSE NIL
+                               :COURSE COMMON-LISP:NIL
                                :ACADEMIC-YEAR [APEX-MODEL:ACADEMIC-YEAR
                                                  :NAME "2007-2008" ]
                                :PARITY-SEMESTER 2
-                               :PARTS NIL ]) ])
+                               :PARTS COMMON-LISP:NIL ]) ])
    :BATCHES ([APEX-MODEL:BATCH
                 :TEACHING-PROGRAM [APEX-MODEL:TEACHING-PROGRAM
                                      :NAME "LST_Informatique"
                                      :ORGANIZED-BY [APEX-MODEL:ORGANIZATION
                                                       :NAME "Département Licence" ]
-                                     :PART-OF NIL ]
+                                     :PART-OF COMMON-LISP:NIL ]
                 :RELATIVE-SEMESTER 5
                 :ACADEMIC-YEAR [APEX-MODEL:ACADEMIC-YEAR :NAME "2007-2008" ]
                 :PARITY-SEMESTER 2
                 :SIZE 2
                 :REVENUE-PER-STUDENT 13 ])
-   :FOLLOWS NIL ]
+   :FOLLOWS COMMON-LISP:NIL
+   :REGISTRATIONS ([APEX-MODEL:REGISTRATION
+                      :PERSON #2#
+                      :ID 601053
+                      :REGISTERED-YEARS COMMON-LISP:NIL ]
+                   [APEX-MODEL:REGISTRATION
+                      :PERSON #3#
+                      :ID 601051
+                      :REGISTERED-YEARS (#1#) ]
+                   [APEX-MODEL:REGISTRATION
+                      :PERSON #4#
+                      :ID 601052
+                      :REGISTERED-YEARS (#4#) ]) ]

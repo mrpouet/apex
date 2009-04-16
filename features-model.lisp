@@ -6,8 +6,8 @@
 
 (defmethod studentp ((p person) (buffer buffer-extended))
   (let ((registrations (registrations buffer)))
-    (find (name p) registrations :key (lambda (r) (name (person r))) 
-	  :test #'string=)))
+    (find p registrations :key (lambda (r) (person r)) 
+	  :test #'eq)))
 
 (defmethod get-registration-with-id (student-id (buffer buffer-extended))
   (let ((registration (find student-id (registrations buffer)
