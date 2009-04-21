@@ -31,4 +31,5 @@
 (define-save-info registration
   (:person person)
   (:id id)
-  (:registered-years registered-years))
+  (:registered-years registered-years)
+  (:notes notes))

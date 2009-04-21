@@ -1,7 +1,4 @@
-* Remplacer la hash-table de la gestion des notes par un liste
-  (hash-table non sauvegardable par apex)
-* Ajouter un listing etudiant pour la commande Voir etudiant
-  (exemple: si deux étudiant portent le même nom)
+* Ajouter la possibilité de calculer les notes par UE, et pour un semestre
 * Demander confirmation si buffer modifier et non sauvegardé
 
 * Rajouter la notion de groupe et de semestre (spécialité de la
@@ -9,6 +6,6 @@
 
 * Rajouter la notion d'UE par étudiant
 
-* Ajouter des commentaires
+* Ajouter des commentaires (pour le code)
 
 * Ajouter un tri pour les UE
