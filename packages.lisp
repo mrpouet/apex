@@ -19,7 +19,7 @@
 	   #:academic-year
 	   #:course 
 	   #:supplier #:person-in-charge #:code #:credits #:instances
-	   #:teaching-type
+	   #:teaching-type #:semester
 	   #:course-instance 
 	   #:negociated-price #:parts #:part-instances
 	   #:course-part #:part-instance #:fraction #:assignments
@@ -27,7 +27,9 @@
 	   #:revenue-per-student #:studentp
 	   #:revenue #:batch-in-program-p
 	   #:follow #:price #:cost
-	   #:address #:postal-code #:city
+	   #:address #:postal-code #:city #:year #:first-semester 
+	   #:second-semester #:note #:first-semester-notes 
+	   #:second-semester-notes
 	   #:name
 	   #:remark
 	   #:instances
