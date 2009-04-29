@@ -8892,5 +8892,40 @@ ISV1
                                             :FIRST-SEMESTER [APEX-MODEL:SEMESTER
                                                                :NAME "CSB3A2" ]
                                             :SECOND-SEMESTER [APEX-MODEL:SEMESTER
-                                                                :NAME "CSB4A2" ] ])
+                                                                :NAME "CSB4A2" ]
+                                            :FIRST-SEMESTER-NOTES (("INF205"
+                                                                    ("Exam"
+                                                                     12.5)
+                                                                    ("TP"
+                                                                     13.5))
+                                                                   ("INF255"
+                                                                    ("Exam"
+                                                                     20.0)
+                                                                    ("TP"
+                                                                     14.5))
+                                                                   ("INF252"
+                                                                    ("Exam"
+                                                                     15.0)
+                                                                    ("DS"
+                                                                     18.0)))
+                                            :SECOND-SEMESTER-NOTES (("INF201"
+                                                                     ("Exam"
+                                                                      17.0)
+                                                                     ("DS"
+                                                                      18.0))
+                                                                    ("INF204"
+                                                                     ("Exam"
+                                                                      11.0)
+                                                                     ("DS"
+                                                                      14.0))
+                                                                    ("INF206"
+                                                                     ("Exam"
+                                                                      15.0)
+                                                                     ("DS"
+                                                                      14.5))
+                                                                    ("INF208"
+                                                                     ("Exam"
+                                                                      8.0 6.0)
+                                                                     ("DS"
+                                                                      10.0))) ])
                       :NOTES COMMON-LISP:NIL ]) ]

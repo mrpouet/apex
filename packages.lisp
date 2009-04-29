@@ -28,7 +28,8 @@
 	   #:revenue #:batch-in-program-p
 	   #:follow #:price #:cost
 	   #:address #:postal-code #:city #:year #:first-semester 
-	   #:second-semester #:note #:first-semester-notes 
+	   #:second-semester #:note #:first-semester-notes #:push-note-s1
+	   #:push-note-s2 #:valid-course #:get-credits-from-course
 	   #:second-semester-notes
 	   #:name
 	   #:remark
